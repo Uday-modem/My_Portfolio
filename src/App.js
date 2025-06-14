@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
+
 import ReactGA from "react-ga4";
 
 import Homepage from "./pages/homepage";
@@ -9,6 +10,11 @@ import Articles from "./pages/articles";
 import ReadArticle from "./pages/readArticle";
 import Contact from "./pages/contact";
 import Notfound from "./pages/404";
+//import Resume from './assets/SR_Resume';
+
+
+
+
 
 import { TRACKING_ID } from "./data/tracking";
 import "./app.css";
@@ -22,6 +28,7 @@ function App() {
 
 	return (
 		<div className="App">
+			
 			<Routes>
 				<Route path="/" element={<Homepage />} />
 				<Route path="/about" element={<About />} />
@@ -29,8 +36,11 @@ function App() {
 				<Route path="/articles" element={<Articles />} />
 				<Route path="/article/:slug" element={<ReadArticle />} />
 				<Route path="/contact" element={<Contact />} />
-				<Route path="*" element={<Notfound />} />
+        		
+ 				<Route path="*" element={<Notfound />} />
 			</Routes>
+			
+			
 		</div>
 	);
 }
