@@ -40,7 +40,7 @@
 .about-left-side {
 	display: flex;
 	flex-direction: column;
-	flex-basis: 300px;
+	flex-basis: 250px;
 }
 
 .about-image-container {
@@ -50,7 +50,7 @@
 .about-image-wrapper {
 	display: inline-block;
 	overflow: hidden;
-	width: 100%;
+	width: 80%;
 	border-radius: 10%;
 	transform: rotate(3deg);
 }

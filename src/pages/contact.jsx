@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 
 import NavBar from "../components/common/navBar";
@@ -12,80 +12,159 @@ import SEO from "../data/seo";
 import "./styles/contact.css";
 
 const Contact = () => {
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
-	const currentSEO = SEO.find((item) => item.page === "contact");
+    const currentSEO = SEO.find((item) => item.page === "contact");
 
-	return (
-		<React.Fragment>
-			<Helmet>
-				<title>{`Contact | ${INFO.main.title}`}</title>
-				<meta name="description" content={currentSEO.description} />
-				<meta
-					name="keywords"
-					content={currentSEO.keywords.join(", ")}
-				/>
-			</Helmet>
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+    });
 
-			<div className="page-content">
-				<NavBar active="contact" />
-				<div className="content-wrapper">
-					<div className="contact-logo-container">
-						<div className="contact-logo">
-							<Logo width={46} />
-						</div>
-					</div>
+    const [submitted, setSubmitted] = useState(false);
 
-					<div className="contact-container">
-						<div className="title contact-title">
-							Let's Get in Touch: Ways to Connect with Me
-						</div>
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
 
-						<div className="subtitle contact-subtitle">
-							Thank you for your interest in getting in touch with
-							me. I welcome your feedback, questions, and
-							suggestions. If you have a specific question or
-							comment, please feel free to email me directly at
-							&nbsp;{" "}
-							<a href={`mailto:${INFO.main.email}`}>
-								{INFO.main.email}
-							</a>
-							. I make an effort to respond to all messages within
-							24 hours, although it may take me longer during busy
-							periods. Alternatively, you can use the contact form
-							on my website to get in touch. Simply fill out the
-							required fields and I'll get back to you as soon as
-							possible. Finally, if you prefer to connect on
-							social media, you can find me on{" "}
-							<a
-								href={INFO.socials.instagram}
-								target="_blank"
-								rel="noreferrer"
-							>
-								{INFO.socials.instagram}
-							</a>
-							. I post regular updates and engage with my
-							followers there, so don't hesitate to reach out.
-							Thanks again for your interest, and I look forward
-							to hearing from you!
-						</div>
-					</div>
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-					<div className="socials-container">
-						<div className="contact-socials">
-							<Socials />
-						</div>
-					</div>
+        const mailtoLink = `mailto:${INFO.main.email}?subject=${encodeURIComponent(
+            formData.subject || "Portfolio Contact"
+        )}&body=${encodeURIComponent(
+            `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        )}`;
 
-					<div className="page-footer">
-						<Footer />
-					</div>
-				</div>
-			</div>
-		</React.Fragment>
-	);
+        window.location.href = mailtoLink;
+        setSubmitted(true);
+    };
+
+    return (
+        <React.Fragment>
+            <Helmet>
+                <title>{`Contact | ${INFO.main.title}`}</title>
+                <meta name="description" content={currentSEO.description} />
+                <meta
+                    name="keywords"
+                    content={currentSEO.keywords.join(", ")}
+                />
+            </Helmet>
+
+            <div className="page-content">
+                <NavBar active="contact" />
+                <div className="content-wrapper">
+                    <div className="contact-logo-container">
+                        <div className="contact-logo">
+                            <Logo width={46} />
+                        </div>
+                    </div>
+
+                    <div className="contact-container">
+                        <div className="title contact-title">
+                            Let&apos;s Get in Touch
+                        </div>
+
+                        <div className="subtitle contact-subtitle">
+                            Have a question, project idea, or opportunity? Use
+                            the form below to reach out, or email me directly at{" "}
+                            <a href={`mailto:${INFO.main.email}`}>
+                                {INFO.main.email}
+                            </a>
+                            . I usually respond within 24 hours.
+                        </div>
+                    </div>
+
+                    {/* Contact form */}
+                    <div className="contact-form-section">
+                        <form className="contact-form" onSubmit={handleSubmit}>
+                            <div className="form-row">
+                                <div className="form-group">
+                                    <label htmlFor="name">Name</label>
+                                    <input
+                                        id="name"
+                                        name="name"
+                                        type="text"
+                                        placeholder="Your name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="email">Email</label>
+                                    <input
+                                        id="email"
+                                        name="email"
+                                        type="email"
+                                        placeholder="you@example.com"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="subject">Subject</label>
+                                <input
+                                    id="subject"
+                                    name="subject"
+                                    type="text"
+                                    placeholder="Subject"
+                                    value={formData.subject}
+                                    onChange={handleChange}
+                                />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="message">Message</label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="5"
+                                    placeholder="Write your message here..."
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+
+                            <button type="submit" className="contact-submit">
+                                Send Message
+                            </button>
+
+                            {submitted && (
+                                <p className="contact-success">
+                                    Your mail client should now be open. If it
+                                    did not open, you can manually email{" "}
+                                    {INFO.main.email}.
+                                </p>
+                            )}
+                        </form>
+                    </div>
+
+                    <div className="socials-container">
+                        <div className="contact-socials">
+                            <Socials />
+                        </div>
+                    </div>
+
+                    <div className="page-footer">
+                        <Footer />
+                    </div>
+                </div>
+            </div>
+        </React.Fragment>
+    );
 };
 
 export default Contact;

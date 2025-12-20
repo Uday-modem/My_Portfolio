@@ -1,84 +1,116 @@
 const INFO = {
-	main: {
-		title: "Reactfolio by truethari",
-		name: "Tharindu N.",
-		email: "mail@tharindu.dev",
-		logo: "../logo.png",
-	},
+    main: {
+        title: "Portfolio by Modem Uday Kiran Kumar",
+        name: "Modem Uday Kiran Kumar",
+        email: "udaykirankumar9701@gmail.com",
+        logo: "../logo.png",
+    },
 
-	socials: {
-		twitter: "https://twitter.com/",
-		github: "https://github.com/",
-		linkedin: "https://linkedin.com/",
-		instagram: "https://instagram.com/",
-		stackoverflow: "https://stackoverflow.com/",
-		facebook: "https://facebook.com/",
-	},
+    socials: {
+        github: "https://github.com/Uday-modem",
+        linkedin: "https://www.linkedin.com/in/modem-uday-kiran-kumar-ab367b2aa/",
+    },
 
-	homepage: {
-		title: "Full-stack web and mobile app developer, and amateur astronaut.",
-		description:
-			"I am a backend developer with expertise in Node.js. I have experience in building scalable, secure and reliable web applications using various frameworks and technologies. I enjoy solving complex problems and learning new skills. I am passionate about creating high-quality code that follows best practices and industry standards. I am always looking for new challenges and opportunities to grow as a developer.",
-	},
+    homepage: {
+        title: "Full-Stack Developer | IoT Engineer | Problem Solver",
+        description:
+            "I am a backend developer with expertise in Java and Spring Boot. I have experience in building scalable, secure, and reliable web applications, integrating complex systems like IoT and RFID modules. I enjoy solving challenging technical problems and am passionate about writing high-quality, efficient code that follows industry best practices. I am always eager to learn new technologies and take on opportunities that push my growth as a developer.",
+    },
 
-	about: {
-		title: "I’m Tharindu N. I live in Sri Lanka, where I design the future.",
-		description:
-			"I've worked on a variety of projects over the years and I'm proud of the progress I've made. Many of these projects are open-source and available for others to explore and contribute to. If you're interested in any of the projects I've worked on, please feel free to check out the code and suggest any improvements or enhancements you might have in mind. Collaborating with others is a great way to learn and grow, and I'm always open to new ideas and feedback.",
-	},
+    about: {
+        title: "I'm Modem Uday Kiran Kumar. Full-Stack Developer passionate about building scalable, innovative solutions.",
+        description:
+            "I'm a final-year BTech ECE student with expertise in full-stack web development and IoT systems. I'm passionate about creating high-quality applications that solve real-world problems by integrating hardware, firmware, and cloud-based solutions. I believe in writing clean, efficient code and collaborating with others to learn and grow. My projects showcase my journey from concept to deployment, and I'm always eager to explore new technologies and take on challenging opportunities.",
+    },
 
-	articles: {
-		title: "I'm passionate about pushing the boundaries of what's possible and inspiring the next generation of innovators.",
-		description:
-			"Chronological collection of my long-form thoughts on programming, leadership, product design, and more.",
-	},
+    techstack: {
+    title: "Tech Stack",
+    skills: [
+        {
+            name: "HTML",
+            icon: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
+            level: "Expert"
+        },
+        {
+            name: "CSS",
+            icon: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/css/css.png",
+            level: "Expert"
+        },
+        {
+            name: "JavaScript",
+            icon: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
+            level: "Expert"
+        },
+        {
+            name: "Python",
+            icon: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png",
+            level: "Intermediate"
+        },
+        
+        {
+            name: "React Native",
+            icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg",
+            level: "Intermediate"
+        },
+        {
+            name: "Java",
+            icon: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/java/java.png",
+            level: "Advanced"
+        },
+        {
+            name: "MySQL",
+            icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg",
+            level: "Intermediate"
+        },
+        {
+            name: "C",
+            icon: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/c/c.png",
+            level: "Intermediate"
+        },
+        {
+            name: "C#",
+            icon: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/csharp/csharp.png",
+            level: "Beginner"
+        }
+    ]
+},
 
-	projects: [
-		{
-			title: "Project 1",
-			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
-			link: "https://github.com",
-		},
 
-		{
-			title: "Project 2",
-			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png",
-			linkText: "View Project",
-			link: "https://github.com",
-		},
 
-		{
-			title: "Project 3",
-			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
-			linkText: "View Project",
-			link: "https://github.com",
-		},
-
-		{
-			title: "Project 4",
-			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
-			link: "https://github.com",
-		},
-
-		{
-			title: "Project 5",
-			description:
-				"Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-			linkText: "View Project",
-			link: "https://github.com",
-		},
-	],
+    projects: [
+        {
+            title: "Smart University Management System",
+            description:
+                "A comprehensive RFID and fingerprint-based attendance system with real-time monitoring, staff presence tracking, and an AI-powered study assistant for generating intelligent mind maps to enhance learning efficiency.",
+            logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
+            linkText: "View on GitHub",
+            link: "https://github.com/Uday-modem/Smart_University_Management_System",
+        },
+        {
+            title: "Health Band Dashboard",
+            description:
+                "An IoT-based wearable health monitoring system with real-time data visualization dashboard. Tracks vital health metrics using sensors and displays them on an interactive web interface for continuous health monitoring.",
+            logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
+            linkText: "View on GitHub",
+            link: "https://github.com/Uday-modem/Health-Band-Dashboard",
+        },
+        {
+            title: "IoT Home Automation with Gas Detection",
+            description:
+                "A smart home automation system with integrated gas detection sensors. Enables remote control of home appliances and provides real-time alerts for hazardous gas detection, prioritizing safety and convenience.",
+            logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
+            linkText: "View on GitHub",
+            link: "https://github.com/Uday-modem/iot-home-automation-with-gas-detection",
+        },
+        {
+            title: "Women Safety Device",
+            description:
+                "An innovative wearable safety device designed to enhance personal security. Integrates GPS tracking, emergency alerts, and IoT connectivity to provide real-time location sharing and distress notifications.",
+            logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
+            linkText: "View on GitHub",
+            link: "https://github.com/Uday-modem/women-safety-device",
+        },
+    ],
 };
 
 export default INFO;

@@ -1,40 +1,41 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import "./styles/footer.css";
 
 const Footer = () => {
-	return (
-		<React.Fragment>
-			<div className="footer">
-				<div className="footer-links">
-					<ul className="footer-nav-link-list">
-						<li className="footer-nav-link-item">
-							<Link to="/">Home</Link>
-						</li>
-						<li className="footer-nav-link-item">
-							<Link to="/about">About</Link>
-						</li>
-						<li className="footer-nav-link-item">
-							<Link to="/projects">Projects</Link>
-						</li>
-						<li className="footer-nav-link-item">
-							<Link to="/articles">Articles</Link>
-						</li>
-						<li className="footer-nav-link-item">
-							<Link to="/contact">Contact</Link>
-						</li>
-					</ul>
-				</div>
+    return (
+        <React.Fragment>
+            <div className="footer">
+                <div className="footer-credits">
+                    <div className="footer-credits-text">
+                        © 2025 Modem Uday Kiran Kumar. All Rights Reserved.
+                    </div>
 
-				<div className="footer-credits">
-					<div className="footer-credits-text">
-						© 2023 Tharindu.dev. All Rights Reserved.
-					</div>
-				</div>
-			</div>
-		</React.Fragment>
-	);
+                    <div className="footer-divider" />
+
+                    <div className="footer-text-links">
+                        <a
+                            href="https://github.com/Uday-modem"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            GitHub
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/modem-uday-kiran-kumar-ab367b2aa/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            LinkedIn
+                        </a>
+                        <a href="mailto:udaykirankumar9701@gmail.com">
+                            Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </React.Fragment>
+    );
 };
 
 export default Footer;
